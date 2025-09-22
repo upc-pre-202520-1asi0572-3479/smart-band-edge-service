@@ -28,3 +28,4 @@ class HealthRecordRepository:
             health_record.created_at,
             record.id
         )
+
