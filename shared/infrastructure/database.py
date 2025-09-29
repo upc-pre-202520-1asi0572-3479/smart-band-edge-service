@@ -15,7 +15,7 @@ def init_db() -> None:
     Initialize the database and create tables for Device and HealthRecord models.
     """
     db.connect()
-    """
-    TODO: import Device and HealthRecord models and create tables
-    """
+    from iam.infrastructure.models import Device
+    from health.infrastructure.models import HealthRecord
+    db.create_tables([Device, HealthRecord], safe=True)
     db.close()
