@@ -1,3 +1,3 @@
 flask==3.1.2
 python-dateutil==2.9.0.post0
-pewee==3.18.0
+peewee==3.18.2
