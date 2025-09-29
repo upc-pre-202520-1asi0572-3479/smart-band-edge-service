@@ -11,6 +11,7 @@ app.register_blueprint(health_api)
 
 first_request = True
 
+@app.before_request
 def setup():
     global first_request
     if first_request:
