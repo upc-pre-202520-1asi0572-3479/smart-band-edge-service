@@ -34,3 +34,12 @@ class AuthApplicationService:
         :return: A Device instance representing the test device.
         """
         return self.device_repository.get_or_create_test_device()
+
+    def get_device_by_id_and_api_key(self, device_id: str, api_key: str) -> Optional[Device]:
+        """
+        Retrieve a device by its ID and API key.
+        :param device_id: The ID of the device
+        :param api_key: The API key of the device
+        :return: An instance if found, None otherwise.
+        """
+        return self.device_repository.find_by_id_and_api_key(device_id, api_key)
