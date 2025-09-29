@@ -10,6 +10,15 @@ health_record_service = HealthRecordApplicationService()
 
 @health_api.route("/api/v1/health-monitoring/data-records", methods=["POST"])
 def create_health_record():
+    """
+    Endpoint to create a new health record.
+    Expects JSON body with 'device_id', 'bpm', and optional 'created_at'.
+    Requires 'X-API-Key' header for authentication.
+
+    :return:
+    JSON response with the created health record or error message.
+    201 Created on success, 400 Bad Request on failure, 401 Unauthorized if authentication
+    """
     auth_result = authenticate_request()
     if auth_result:
         return auth_result  # Return authentication error if any
