@@ -18,7 +18,7 @@ def create_health_record():
         device_id = data["device_id"]
         bpm = data["bpm"]
         created_at = data.get("created_at")
-        record = health_record_service.create_health_record(device_id, bpm, created_at, request.headers.get("X-API-Key")))
+        record = health_record_service.create_health_record(device_id, bpm, created_at, request.headers.get("X-API-Key"))
         return jsonify({
             "id": record.id,
             "device_id": record.device_id,
